@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PreEntrega 3</title>
+    <!-- BS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <!-- MI CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+3&family=Tektur&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="colorNav" id="Home">
+      <!-- NAV -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <img class="logoNav" src="img/cafelogo1.png" alt="" />
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link nav-texto" href="#Home">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-texto" href="#Menu">Menú</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-texto" href="#News">Newsletter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-texto" href="carrito.html">Carrito</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- FIN NAV -->
+    </header>
+    <!-- primer pagina HOME -->
+
+    <section class="row colorHome">
+      <div class="col divHome">
+        <div>
+          <h1 class="tituloCafe">Ori's café</h1>
+          <p class="parrafoHome">
+            En nuestra acogedora cafetería, te esperamos con los aromas más
+            exquisitos, los sabores más intensos y la calidez que te hace sentir
+            como en casa. Disfruta cada día de tu taza de alegría, porque en
+            este rincón de encuentro, la pasión por el café y la atención
+            personalizada se fusionan para brindarte momentos inolvidables.
+          </p>
+        </div>
+        <div class="botonHome">
+          <button><a href="#Menu" class="btn btnColor">Menu</a></button>
+        </div>
+      </div>
+      <div class="col">
+        <img
+          id="imagenHome"
+          src="img/cafelogo1.png"
+          alt="logo de café animado"
+        />
+      </div>
+    </section>
+    <!--  -->
+
+    <!-- segunda pagina MENU -->
+    <section class="colorMenu" id="Menu">
+      <h2 class="subtitulo">Ori's café menú</h2>
+      <div class="divSubt">
+        <h3 class="subtitulo2">Cafés</h3>
+      </div>
+      <br />
+      <article id="cardCafes">
+        <!-- js -->
+      </article>
+      <br />
+      <div class="divSubt">
+        <h3 class="subtitulo2">Tortas</h3>
+      </div>
+      <br />
+      <article id="cardTortas">
+        <!-- js -->
+      </article>
+      <br />
+      <div class="divSubt">
+        <h3 class="subtitulo2">Tés</h3>
+      </div>
+      <br />
+      <article id="cardTes">
+        <!-- js -->
+      </article>
+      <br />
+    </section>
+    <!--  -->
+
+    <!-- tercer pagina NEWSLETTER -->
+    <section class="colorNews" id="News">
+      <br />
+      <!-- Formulario -->
+      <div class="container-fluid fondoForm">
+        <div class="row">
+          <h2 class="h2Form">Registrate para no perderte ningun descuento !</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="newsletter-form col-md-12">
+              <form
+                id="newsletter-signup"
+                action=""
+                class="col-md-6 col-md-offset-2"
+              >
+                <!-- NOMBRE -->
+                <div class="form-group has-feedback">
+                  <label
+                    for="first-name"
+                    class="control-label col-md-3 col-md-offset-1"
+                    >Nombre</label
+                  >
+                  <div class="input-group col-md-8">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-user"></i
+                    ></span>
+                    <input
+                      id="first-name"
+                      type="text"
+                      Please
+                      provide
+                      your
+                      first
+                      name
+                      class="form-control"
+                      name="first-name"
+                      placeholder="Nombre"
+                    />
+                  </div>
+                  <span
+                    id="first-name-validation"
+                    class="help-block col-md-8 col-md-offset-4"
+                    >Por favor, ingrese su nombre</span
+                  >
+                </div>
+                <!-- APELLIDO -->
+                <div class="form-group has-feedback">
+                  <label
+                    for="last-name"
+                    class="col-md-3 control-label col-md-offset-1"
+                    >Apellido</label
+                  >
+                  <div class="input-group col-md-8">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-user"></i
+                    ></span>
+                    <input
+                      id="last-name"
+                      type="text"
+                      class="form-control"
+                      name="last-name"
+                      placeholder="Apellido"
+                    />
+                  </div>
+                  <span
+                    id="last-name-validation"
+                    class="help-block col-md-8 col-md-offset-4"
+                    >Por favor, ingrese su apellido</span
+                  >
+                </div>
+                <!-- EMAIL -->
+                <div class="form-group has-feedback">
+                  <label
+                    for="email"
+                    class="col-md-3 control-label col-md-offset-1"
+                    >E-Mail</label
+                  >
+                  <div class="input-group col-md-8">
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-envelope"></i
+                    ></span>
+                    <input
+                      id="email"
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="E-Mail"
+                    />
+                  </div>
+                  <span
+                    id="email-validation"
+                    class="help-block col-md-8 col-md-offset-4"
+                    >Por favor, ingrese su e-mail</span
+                  >
+                </div>
+                <!-- BOTON -->
+                <button
+                  id="newsletter-submit"
+                  type="submit"
+                  class="btn .btn-default col-md-offset-4 boton-form"
+                >
+                  Registrarse <i class="fa fa-paper-plane"></i>
+                </button>
+                <!--  -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!--  -->
+    </section>
+    <!--  -->
+    <!-- FOOTER -->
+    <div>
+      <footer id="colorFooter">
+        <h5 class="footerContacto">Contactanos !</h5>
+        <h6>
+          Por cualquier duda o consulta que tengas no olvides contactarte con
+          nosotros, con gusto vamos a ayudarte. <br />
+          Elegí la opcion <span>CARRITO</span> para saber que productos
+          agregaste.
+        </h6>
+        <ul>
+          <li><a href="carrito.html">Carrito</a></li>
+        </ul>
+        <div class="derechos">
+          <p class="colorDerechos">Derechos de Copyright 2023 OrianaCerrudo</p>
+        </div>
+      </footer>
+    </div>
+    <!--  -->
+
+    <!-- SCRIPT AL FINAL DEL BODY -->
+    <script src="productos.js"></script>
+    <script src="logica.js"></script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+/* FONT */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* COLORES */
+
+.colorNav {
+  background-color: #7f5539;
+}
+
+.colorHome {
+  background-color: #e6ccb2;
+  padding: 10px;
+  margin: auto;
+}
+
+.colorMenu {
+  background-color: #ddb892;
+}
+
+.colorNews {
+  background-color: #7f5539;
+}
+
+#colorFooter {
+  background-color: #e6ccb2;
+  padding: 2%;
+}
+
+/* ESTILOS */
+
+/* NAV */
+.logoNav {
+  width: 50px;
+  margin-right: 50px;
+}
+.navbar {
+  display: grid;
+  justify-content: center;
+}
+.nav-texto {
+  font-weight: bold;
+  color: #e6ccb2;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+}
+
+/* SECCION 1 */
+
+.tituloCafe {
+  font-family: "Tektur", cursive;
+  color: #5a3c28;
+  font-size: 100px;
+  text-align: left;
+  margin-left: 40px;
+}
+.parrafoHome {
+  font-family: "Source Sans 3", sans-serif;
+  text-align: center;
+  width: 500px;
+  margin-left: 20px;
+}
+.botonHome {
+  width: 475px;
+  text-align: center;
+  margin-left: 40px;
+}
+button {
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: #5a3c28;
+  background-color: #9c7860;
+}
+.btnColor {
+  color: #e6ccb2;
+}
+.divHome {
+  margin: auto;
+}
+#imagenHome {
+  width: 90%;
+  margin: auto;
+}
+
+/* SECCION 2 */
+
+.subtitulo {
+  font-family: "Tektur", cursive;
+  color: #5a3c28;
+  text-align: center;
+  font-size: 60px;
+}
+.divSubt {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #5a3c28;
+  background-color: #e6ccb2;
+  text-align: center;
+}
+.subtitulo2 {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  color: #5a3c28;
+  font-size: 35px;
+}
+
+/* SECCION 3 */
+
+/* FORMULARIO */
+.fondoForm {
+  width: 65%;
+  background-color: #e6ccb2;
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  padding: 2%;
+}
+.h2Form {
+  font-family: "Tektur", cursive;
+  color: #5a3c28;
+  text-align: center;
+  margin: auto;
+}
+.newsletter-form {
+  margin: 0% 22%;
+}
+.control-label {
+  color: #5a3c28;
+  font-weight: bold;
+}
+.boton-form {
+  color: #5a3c28;
+  font-weight: bold;
+  background-color: white;
+}
+
+/* FOOTER */
+.footerContacto {
+  text-align: center;
+  color: #5a3c28;
+}
+h6 {
+  text-align: center;
+  font-size: 1rem;
+  color: #5a3c28;
+  margin-bottom: 20px;
+}
+span {
+  font-weight: bold;
+  color: #5a3c28;
+}
+.derechos {
+  text-align: center;
+}
+.colorDerechos {
+  color: #5a3c2867;
+}
+footer ul {
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+}
+ul li a {
+  text-decoration: none;
+  color: #5a3c28;
+  padding: 10px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 5px;
+}
