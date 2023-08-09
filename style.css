@@ -38,10 +38,6 @@ footer {
   color: #442c1b;
   font-weight: bold;
 }
-.logoNav {
-  width: 50px;
-  margin-left: 50px;
-}
 .nav-texto {
   font-weight: bold;
   color: #e6ccb2;
@@ -114,14 +110,14 @@ footer {
 }
 
 .divSubt {
-  width: 650px;
   border-style: solid;
   border-width: 3px;
   border-color: #5a3c28;
   border-radius: 10px;
   background-color: #e6ccb2;
   text-align: center;
-  margin: auto;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .subtitulo2 {
   font-family: "Source Sans 3", sans-serif;
