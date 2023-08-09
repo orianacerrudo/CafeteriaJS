@@ -1,123 +1,153 @@
-/*let nombre;
+//si habia un carrito anteriormente, lo recupero
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function bienvenida() {
-  nombre = prompt("Por favor, ingrese su nombre:");
-  alert("Bienvenido/a " + nombre + " a mi cafetería!");
-  return nombre;
-}
+let tablaCarrito = document.getElementById("tablaCarrito");
 
-function despedida() {
-  alert(
-    "Muchas gracias " +
-      nombre +
-      ' por haber visitado "Ori`s café". ¡Que tengas un buen día!'
-  );
-}
+//DOM y renderizado de Cafes
+let cardProductos = document.getElementById("cardCafes");
+renderizarProductos(productosCafes, cardProductos);
 
-//
+//DOM y renderizado de Tortas
+let cardProductos2 = document.getElementById("cardTortas");
+renderizarProductos(productosTortas, cardProductos2);
 
-bienvenida(nombre);
+//DOM y renderizado de Tes
+let cardProductos3 = document.getElementById("cardTes");
+renderizarProductos(productosTes, cardProductos3);
 
-alert("A continuación seleccione el numero del producto que desea comprar:");
+//DOM y renderizado de Tostados
+let cardProductos4 = document.getElementById("cardTostados");
+renderizarProductos(productosTostados, cardProductos4);
 
-// funcion que muestra el producto
-function mostrarProducto() {
-  let idProducto;
+//FUNCION renderizarProductos en card
+function renderizarProductos(productos, cardElement) {
+  for (const producto of productos) {
+    cardElement.innerHTML += `
+    <div class="col">
+    <div class="card estiloCard">
+      <img src="${producto.imagen}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">${producto.nombre}</h5>
+        <p class="card-text">Precio $${producto.precio}</p>
+        <a class="btn agregar" id=${producto.id}>Agregar al carrito</a>
+      </div>
+    </div>
+    `;
+  }
 
-  while (idProducto !== 0) {
-    // entra en un ciclo
-    idProducto = parseInt(
-      prompt(
-        "1| Café Americano.\n2| Café Suizo.\n3| Café con leche.\n4| Porción de cheesecake de frutos rojos.\n5| Porción de chocotorta.\n6| Cuadradito brownie con bocha de helado.\n7| Waffle con frutas y dulce de leche.\nPresione 0 para salir."
-      )
-    );
-
-    if (idProducto === 0) {
-      console.log("Gracias por utilizar nuestro servicio. ¡Hasta pronto!");
-      break; // corta el ciclo cuando ingresa 0
-    }
-
-    const producto = productos.find((prod) => prod.id === idProducto);
-    if (producto) {
-      alert(
-        "Has seleccionado: " + producto.nombre + "\nPrecio: $" + producto.precio
+  //evento del boton
+  let botones = cardElement.getElementsByClassName("agregar");
+  for (const boton of botones) {
+    boton.addEventListener("click", () => {
+      const prodACarrito = productos.find(
+        (producto) => producto.id == boton.id
       );
-    } else {
-      // si no encuentra el numero tira este alert
-      alert(
-        "Producto no encontrado. Por favor " +
-          nombre +
-          ", ingresa un número válido."
-      );
-    }
+      agregarACarrito(prodACarrito);
+    });
   }
 }
 
-mostrarProducto();
-
-despedida();
-*/
-
-// cards de los productos
-let cardProductos = document.getElementById("cardCafes");
-
-for (const producto of productosCafes) {
-  cardProductos.innerHTML += `
-  <div class="container text-center">
-  <div class="row">
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="img de cafe">
-  <div class="card-body">
-    <h5 class="card-title">${producto.nombre}</h5>
-    <p class="card-text">Precio $ ${producto.precio}</p>
-    <a href="#" class="btn btn-primary">Agregar al carrito</a>
-  </div>
-</div>
-    </div>
-    </div>
-  </div>
+// FUNCION que agrega el producto al carrito y actualiza localStorage
+function agregarACarrito(producto) {
+  carrito.push(producto);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  //ALERT TOASTIFY
+  Toastify({
+    text: "Agregaste " + producto.nombre + " con éxito al carrito",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    close: true,
+    gravity: "top", // TOP O BOTTOM
+    position: "center", // LEFT, CENTER O RIGHT
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(to right, #3b2900, #b6853c)",
+    },
+  }).showToast();
+  tablaCarrito.innerHTML += `
+      <tr>
+        <td>${producto.id}</td>
+        <td>${producto.nombre}</td>
+        <td>$${producto.precio}</td>
+      </tr>
     `;
+
+  //calcula el total
+  let totalCarrito = carrito.reduce(
+    (acumulador, producto) => acumulador + producto.precio,
+    0
+  );
+  document.getElementById("total").innerText =
+    "Precio total de su compra: $ " + totalCarrito;
 }
 
-let cardProductos2 = document.getElementById("cardTortas");
+// Mostrar productos en el carrito desde localStorage
+function mostrarProductosEnCarrito() {
+  const carritoLocalStorage = JSON.parse(localStorage.getItem("carrito")) || [];
 
-for (const producto of productosTortas) {
-  cardProductos2.innerHTML += `
-  <div class="container text-center">
-  <div class="row">
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="img de torta">
-  <div class="card-body">
-    <h5 class="card-title">${producto.nombre}</h5>
-    <p class="card-text">Precio $ ${producto.precio}</p>
-    <a href="#" class="btn btn-primary">Agregar al carrito</a>
-  </div>
-</div>
-    </div>
-    </div>
-  </div>
-    `;
+  for (const producto of carritoLocalStorage) {
+    tablaCarrito.innerHTML += `
+        <tr>
+          <td>${producto.id}</td>
+          <td>${producto.nombre}</td>
+          <td>$${producto.precio}</td>
+        </tr>
+      `;
+  }
+  //calcula el total
+  let totalCarrito = carrito.reduce(
+    (acumulador, producto) => acumulador + producto.precio,
+    0
+  );
+  document.getElementById("total").innerText =
+    "Precio total de su compra: $" + totalCarrito;
 }
 
-let cardProductos3 = document.getElementById("cardTes");
+// Llama a mostrarProductosEnCarrito cuando se carga la página
+document.addEventListener("DOMContentLoaded", function () {
+  mostrarProductosEnCarrito();
+});
 
-for (const producto of productosTes) {
-  cardProductos3.innerHTML += `
-  <div class="container text-center">
-  <div class="row">
-    <div class="col">
-    <div class="card" style="width: 18rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="img de te">
-  <div class="card-body">
-    <h5 class="card-title">${producto.nombre}</h5>
-    <p class="card-text">Precio $ ${producto.precio}</p>
-    <a href="#" class="btn btn-primary">Agregar al carrito</a>
-  </div>
-</div>
-    </div>
-    </div>
-  </div>
-    `;
-}
+//finalizar compra
+let finCompra = document.getElementById("finalizarCompra");
+
+finCompra.onclick = () => {
+  let totalCarrito = carrito.reduce(
+    (acumulador, producto) => acumulador + producto.precio,
+    0
+  );
+  if (totalCarrito == 0) {
+    // SWEETALERT
+    Swal.fire(
+      "Error",
+      "Parece que su carrito se encuentra vacío, agregue productos para continuar",
+      "question"
+    );
+  } else {
+    // SWEETALERT
+    Swal.fire({
+      title: "¿Desea confirmar su compra?",
+      text: "El gasto total será: $" + totalCarrito,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, confirmar compra",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "¡Su compra ha finalizado con éxito!",
+          "Llegará a su destino en 30/40 minutos",
+          "success"
+        );
+
+        // Vaciar el carrito y la tabla
+        carrito = [];
+        tablaCarrito.innerHTML = "";
+        document.getElementById("total").innerText =
+          "Precio total de su compra: $0";
+        localStorage.removeItem("carrito");
+      }
+    });
+  }
+};

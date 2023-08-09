@@ -16,33 +16,27 @@ body {
 
 .colorHome {
   background-color: #e6ccb2;
-  padding: 10px;
-  margin: auto;
 }
 
 .colorMenu {
   background-color: #ddb892;
 }
 
-.colorNews {
+.colorCarrito {
   background-color: #7f5539;
 }
 
-#colorFooter {
+footer {
   background-color: #e6ccb2;
   padding: 2%;
 }
 
-/* ESTILOS */
+/* ESTILOS 
 
 /* NAV */
 .logoNav {
   width: 50px;
-  margin-right: 50px;
-}
-.navbar {
-  display: grid;
-  justify-content: center;
+  margin-left: 50px;
 }
 .nav-texto {
   font-weight: bold;
@@ -52,41 +46,58 @@ body {
   text-align: center;
 }
 
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ulNav {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
 /* SECCION 1 */
 
 .tituloCafe {
   font-family: "Tektur", cursive;
   color: #5a3c28;
   font-size: 100px;
-  text-align: left;
-  margin-left: 40px;
+  text-align: center;
+  margin: auto;
 }
+
 .parrafoHome {
   font-family: "Source Sans 3", sans-serif;
   text-align: center;
-  width: 500px;
-  margin-left: 20px;
+  width: 300px;
+  margin: auto;
 }
 .botonHome {
-  width: 475px;
   text-align: center;
-  margin-left: 40px;
 }
-button {
-  border-radius: 15px;
+.botonA {
+  width: 100px;
+  text-align: center;
+  margin: auto;
   border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
   border-color: #5a3c28;
   background-color: #9c7860;
 }
-.btnColor {
-  color: #e6ccb2;
+.botonB {
+  text-decoration: none;
+  font-size: 22px;
+  color: #5a3c28;
 }
-.divHome {
+
+.imagenHome {
+  width: 300px;
+  display: block;
   margin: auto;
-}
-#imagenHome {
-  width: 90%;
-  margin: auto;
+  margin-bottom: 15px;
 }
 
 /* SECCION 2 */
@@ -97,12 +108,16 @@ button {
   text-align: center;
   font-size: 60px;
 }
+
 .divSubt {
+  width: 650px;
   border-style: solid;
   border-width: 3px;
   border-color: #5a3c28;
+  border-radius: 10px;
   background-color: #e6ccb2;
   text-align: center;
+  margin: auto;
 }
 .subtitulo2 {
   font-family: "Source Sans 3", sans-serif;
@@ -110,35 +125,84 @@ button {
   color: #5a3c28;
   font-size: 35px;
 }
-
-/* SECCION 3 */
-
-/* FORMULARIO */
-.fondoForm {
-  width: 65%;
-  background-color: #e6ccb2;
-  border-style: solid;
-  border-color: white;
-  border-width: 5px;
-  padding: 2%;
+/* CARDS */
+div#cardCafes,
+div#cardTortas,
+div#cardTes,
+div#cardTostados {
+  margin-left: 2%;
+  margin-right: 2%;
 }
-.h2Form {
-  font-family: "Tektur", cursive;
-  color: #5a3c28;
+.card-body {
+  background-color: #5a3c28;
   text-align: center;
-  margin: auto;
 }
-.newsletter-form {
-  margin: 0% 22%;
+.card-title,
+.card-text {
+  color: #e6ccb2;
 }
-.control-label {
+.agregar {
+  background-color: #e6ccb2;
   color: #5a3c28;
   font-weight: bold;
 }
-.boton-form {
+.estiloCard {
+  border-width: 3px;
+  border-color: #5a3c28;
+}
+
+/* SECCION 3 CARRITO */
+.h1Car {
+  padding: 15px;
+  text-align: center;
+  font-family: "Tektur", cursive;
+  font-size: 40px;
+  color: #ddb892;
+}
+.total {
   color: #5a3c28;
   font-weight: bold;
-  background-color: white;
+  font-size: larger;
+}
+.btnFinalizar {
+  border-color: #5a3c28;
+  border-width: 2px;
+  background-color: #ddb892;
+  color: #5a3c28;
+  font-weight: bold;
+}
+.carrito {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #e6ccb2;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+table tr {
+  background-color: #ddb892;
+}
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  font-weight: bold;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table td {
+  vertical-align: middle;
 }
 
 /* FOOTER */
@@ -152,26 +216,52 @@ h6 {
   color: #5a3c28;
   margin-bottom: 20px;
 }
-span {
-  font-weight: bold;
-  color: #5a3c28;
-}
 .derechos {
   text-align: center;
 }
 .colorDerechos {
   color: #5a3c2867;
 }
-footer ul {
-  width: 100%;
-  list-style-type: none;
-  text-align: center;
+
+/* MEDIAQUERIES */
+
+/* TABLET */
+@media (min-width: 768px) {
+  .imagenHome {
+    width: 380px;
+    display: block;
+    margin: 75px auto;
+  }
+  .tituloCafe {
+    margin-top: 30px;
+  }
 }
-ul li a {
-  text-decoration: none;
-  color: #5a3c28;
-  padding: 10px;
-  font-weight: bold;
-  background-color: white;
-  border-radius: 5px;
+
+/* LAPTOP 1024 */
+@media (min-width: 992px) {
+  .tituloCafe {
+    margin-top: 75px;
+  }
+}
+
+/* LAPTOP LARGE 1440 */
+@media (min-width: 1024px) {
+  .tituloCafe {
+    font-size: 150px;
+  }
+  .parrafoHome {
+    font-size: 20px;
+    width: 400px;
+  }
+  .botonCss {
+    width: 100px;
+  }
+  a.btn.btnColor {
+    font-size: 25px;
+  }
+  .imagenHome {
+    width: 500px;
+    display: block;
+    margin: 75px auto;
+  }
 }

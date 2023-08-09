@@ -62,5 +62,25 @@ const productosTes = [
     imagen: "./img/tehelado.jpg",
   },
 ];
+const productosTostados = [
+  {
+    id: 10,
+    nombre: "Tostado de jamon y queso",
+    precio: 1100,
+    imagen: "./img/tostado-jamon-queso.png",
+  },
+  {
+    id: 11,
+    nombre: "Tostado de 3 quesos",
+    precio: 1300,
+    imagen: "./img/tostado-3-quesos.png",
+  },
+  {
+    id: 12,
+    nombre: "Tostado de lomito y cheddar",
+    precio: 1500,
+    imagen: "./img/Tostado-lomito-y-cheddar.png",
+  },
+];
 
 //

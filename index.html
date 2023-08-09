@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,12 +20,31 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+3&family=Tektur&display=swap"
       rel="stylesheet"
     />
+    <!-- SWEETALERT -->
+    <link
+      href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css "
+      rel="stylesheet"
+    />
+    <!-- TOASTIFY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Source+Sans+3&family=Tektur&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="colorNav" id="Home">
       <!-- NAV -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <h1 class="titulo">NAO accesorios !</h1></a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -39,7 +58,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <img class="logoNav" src="img/cafelogo1.png" alt="" />
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ulNav">
               <li class="nav-item">
                 <a class="nav-link nav-texto" href="#Home">Inicio</a>
               </li>
@@ -47,10 +66,7 @@
                 <a class="nav-link nav-texto" href="#Menu">Menú</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-texto" href="#News">Newsletter</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-texto" href="carrito.html">Carrito</a>
+                <a class="nav-link nav-texto" href="#Carrito">Carrito</a>
               </li>
             </ul>
           </div>
@@ -58,7 +74,7 @@
       </nav>
       <!-- FIN NAV -->
     </header>
-    <!-- primer pagina HOME -->
+    <!-- primer seccion HOME -->
 
     <section class="row colorHome">
       <div class="col divHome">
@@ -72,13 +88,17 @@
             personalizada se fusionan para brindarte momentos inolvidables.
           </p>
         </div>
+        <br />
         <div class="botonHome">
-          <button><a href="#Menu" class="btn btnColor">Menu</a></button>
+          <button class="botonA">
+            <a href="#Menu" class="botonB">Menu</a>
+          </button>
         </div>
+        <br />
       </div>
       <div class="col">
         <img
-          id="imagenHome"
+          class="imagenHome"
           src="img/cafelogo1.png"
           alt="logo de café animado"
         />
@@ -86,172 +106,103 @@
     </section>
     <!--  -->
 
-    <!-- segunda pagina MENU -->
+    <!-- segunda seccion MENU -->
+
     <section class="colorMenu" id="Menu">
       <h2 class="subtitulo">Ori's café menú</h2>
       <div class="divSubt">
         <h3 class="subtitulo2">Cafés</h3>
       </div>
       <br />
-      <article id="cardCafes">
+
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="cardCafes">
         <!-- js -->
-      </article>
+      </div>
       <br />
+
       <div class="divSubt">
         <h3 class="subtitulo2">Tortas</h3>
       </div>
       <br />
-      <article id="cardTortas">
+
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="cardTortas">
         <!-- js -->
-      </article>
+      </div>
       <br />
+
       <div class="divSubt">
         <h3 class="subtitulo2">Tés</h3>
       </div>
       <br />
-      <article id="cardTes">
+
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="cardTes">
         <!-- js -->
-      </article>
+      </div>
+      <br />
+
+      <div class="divSubt">
+        <h3 class="subtitulo2">Tostados</h3>
+      </div>
+      <br />
+
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="cardTostados">
+        <!-- js -->
+      </div>
       <br />
     </section>
     <!--  -->
 
-    <!-- tercer pagina NEWSLETTER -->
-    <section class="colorNews" id="News">
-      <br />
-      <!-- Formulario -->
-      <div class="container-fluid fondoForm">
-        <div class="row">
-          <h2 class="h2Form">Registrate para no perderte ningun descuento !</h2>
+    <!-- tercer seccion CARRITO -->
+
+    <div class="colorCarrito">
+      <h1 class="h1Car">Carrito de Compras</h1>
+      <section>
+        <div class="carrito" id="carrito">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody id="tablaCarrito">
+              <!-- JS tabla carrito -->
+            </tbody>
+          </table>
+          <br />
+          <h3 class="total" id="total">Precio total de su compra: $</h3>
+          <button id="finalizarCompra" class="btn btnFinalizar">
+            Finalizar compra
+          </button>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="newsletter-form col-md-12">
-              <form
-                id="newsletter-signup"
-                action=""
-                class="col-md-6 col-md-offset-2"
-              >
-                <!-- NOMBRE -->
-                <div class="form-group has-feedback">
-                  <label
-                    for="first-name"
-                    class="control-label col-md-3 col-md-offset-1"
-                    >Nombre</label
-                  >
-                  <div class="input-group col-md-8">
-                    <span class="input-group-addon"
-                      ><i class="glyphicon glyphicon-user"></i
-                    ></span>
-                    <input
-                      id="first-name"
-                      type="text"
-                      Please
-                      provide
-                      your
-                      first
-                      name
-                      class="form-control"
-                      name="first-name"
-                      placeholder="Nombre"
-                    />
-                  </div>
-                  <span
-                    id="first-name-validation"
-                    class="help-block col-md-8 col-md-offset-4"
-                    >Por favor, ingrese su nombre</span
-                  >
-                </div>
-                <!-- APELLIDO -->
-                <div class="form-group has-feedback">
-                  <label
-                    for="last-name"
-                    class="col-md-3 control-label col-md-offset-1"
-                    >Apellido</label
-                  >
-                  <div class="input-group col-md-8">
-                    <span class="input-group-addon"
-                      ><i class="glyphicon glyphicon-user"></i
-                    ></span>
-                    <input
-                      id="last-name"
-                      type="text"
-                      class="form-control"
-                      name="last-name"
-                      placeholder="Apellido"
-                    />
-                  </div>
-                  <span
-                    id="last-name-validation"
-                    class="help-block col-md-8 col-md-offset-4"
-                    >Por favor, ingrese su apellido</span
-                  >
-                </div>
-                <!-- EMAIL -->
-                <div class="form-group has-feedback">
-                  <label
-                    for="email"
-                    class="col-md-3 control-label col-md-offset-1"
-                    >E-Mail</label
-                  >
-                  <div class="input-group col-md-8">
-                    <span class="input-group-addon"
-                      ><i class="glyphicon glyphicon-envelope"></i
-                    ></span>
-                    <input
-                      id="email"
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      placeholder="E-Mail"
-                    />
-                  </div>
-                  <span
-                    id="email-validation"
-                    class="help-block col-md-8 col-md-offset-4"
-                    >Por favor, ingrese su e-mail</span
-                  >
-                </div>
-                <!-- BOTON -->
-                <button
-                  id="newsletter-submit"
-                  type="submit"
-                  class="btn .btn-default col-md-offset-4 boton-form"
-                >
-                  Registrarse <i class="fa fa-paper-plane"></i>
-                </button>
-                <!--  -->
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
       <br />
-      <!--  -->
-    </section>
-    <!--  -->
+    </div>
+
     <!-- FOOTER -->
     <div>
-      <footer id="colorFooter">
+      <footer>
         <h5 class="footerContacto">Contactanos !</h5>
         <h6>
           Por cualquier duda o consulta que tengas no olvides contactarte con
           nosotros, con gusto vamos a ayudarte. <br />
-          Elegí la opcion <span>CARRITO</span> para saber que productos
-          agregaste.
         </h6>
-        <ul>
-          <li><a href="carrito.html">Carrito</a></li>
-        </ul>
         <div class="derechos">
           <p class="colorDerechos">Derechos de Copyright 2023 OrianaCerrudo</p>
         </div>
       </footer>
     </div>
-    <!--  -->
-
-    <!-- SCRIPT AL FINAL DEL BODY -->
-    <script src="productos.js"></script>
-    <script src="logica.js"></script>
   </body>
+  <!--  -->
+  <!-- Sweet alert 2 -->
+  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js "></script>
+  <!-- Toastify -->
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <!-- SCRIPT JS AL FINAL DEL BODY -->
+  <script src="productos.js"></script>
+  <script src="logica.js"></script>
 </html>
