@@ -59,6 +59,9 @@ footer {
 }
 
 /* SECCION 1 */
+.row {
+  --bs-gutter-x: 0rem;
+}
 
 .tituloCafe {
   font-family: "Tektur", cursive;
