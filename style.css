@@ -43,7 +43,6 @@ footer {
   color: #e6ccb2;
   padding: 15px;
   width: 150px;
-  text-align: center;
 }
 
 .container-fluid {
@@ -102,6 +101,17 @@ footer {
   margin: auto;
   margin-bottom: 15px;
 }
+.subtComentarios {
+  border-style: solid;
+  border-color: #5a3c28;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+div#contenedorComentarios {
+  margin-bottom: 15px;
+}
 
 /* SECCION 2 */
 
@@ -152,6 +162,7 @@ div#cardTostados {
 .estiloCard {
   border-width: 3px;
   border-color: #5a3c28;
+  margin-left: 3px;
 }
 
 /* SECCION 3 CARRITO */
@@ -173,6 +184,14 @@ div#cardTostados {
   background-color: #ddb892;
   color: #5a3c28;
   font-weight: bold;
+  margin-right: 44%;
+}
+.btnVaciar {
+  border-color: #5a3c28;
+  border-width: 2px;
+  background-color: #ddb892;
+  color: #5a3c28;
+  font-weight: bold;
 }
 .carrito {
   max-width: 600px;
@@ -182,7 +201,6 @@ div#cardTostados {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -198,14 +216,15 @@ table td {
   text-align: left;
   font-weight: bold;
 }
-
 table th {
   background-color: #f2f2f2;
   font-weight: bold;
 }
-
 table td {
   vertical-align: middle;
+}
+.tamañoIMGcarrito {
+  width: 60px;
 }
 
 /* FOOTER */
@@ -238,12 +257,18 @@ h6 {
   .tituloCafe {
     margin-top: 30px;
   }
+  .btnFinalizar {
+    margin-right: 48%;
+  }
 }
 
 /* LAPTOP 1024 */
 @media (min-width: 992px) {
   .tituloCafe {
     margin-top: 75px;
+  }
+  .nav-texto {
+    text-align: center;
   }
 }
 

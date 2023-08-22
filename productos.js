@@ -82,5 +82,25 @@ const productosTostados = [
     imagen: "./img/Tostado-lomito-y-cheddar.png",
   },
 ];
+const productosWaffles = [
+  {
+    id: 13,
+    nombre: "Waffle con dulce de leche",
+    precio: 1100,
+    imagen: "./img/wafflecondulce.png",
+  },
+  {
+    id: 14,
+    nombre: "Waffle con jamon y queso",
+    precio: 1300,
+    imagen: "./img/wafflejamon-y-queso.png",
+  },
+  {
+    id: 15,
+    nombre: "Wafle con lomito, cheddar y tomate",
+    precio: 1500,
+    imagen: "./img/waffle-salado.png",
+  },
+];
 
 //

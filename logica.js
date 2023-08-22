@@ -19,13 +19,17 @@ renderizarProductos(productosTes, cardProductos3);
 let cardProductos4 = document.getElementById("cardTostados");
 renderizarProductos(productosTostados, cardProductos4);
 
+//DOM y renderizado de Waffles
+let cardProductos5 = document.getElementById("cardWaffles");
+renderizarProductos(productosWaffles, cardProductos5);
+
 //FUNCION renderizarProductos en card
 function renderizarProductos(productos, cardElement) {
   for (const producto of productos) {
     cardElement.innerHTML += `
     <div class="col">
     <div class="card estiloCard">
-      <img src="${producto.imagen}" class="card-img-top" alt="..." />
+      <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}" />
       <div class="card-body">
         <h5 class="card-title">${producto.nombre}</h5>
         <p class="card-text">Precio $${producto.precio}</p>
@@ -66,7 +70,7 @@ function agregarACarrito(producto) {
   }).showToast();
   tablaCarrito.innerHTML += `
       <tr>
-        <td>${producto.id}</td>
+        <td><img class="tamañoIMGcarrito" src="${producto.imagen}" alt="${producto.nombre}"></td>
         <td>${producto.nombre}</td>
         <td>$${producto.precio}</td>
       </tr>
@@ -88,7 +92,7 @@ function mostrarProductosEnCarrito() {
   for (const producto of carritoLocalStorage) {
     tablaCarrito.innerHTML += `
         <tr>
-          <td>${producto.id}</td>
+          <td><img class="tamañoIMGcarrito" src="${producto.imagen}" alt="${producto.nombre}"></td>
           <td>${producto.nombre}</td>
           <td>$${producto.precio}</td>
         </tr>
@@ -151,3 +155,90 @@ finCompra.onclick = () => {
     });
   }
 };
+
+//Vaciar carrito
+const vaciarCarrito = document.getElementById("vaciarCarrito");
+
+//evento
+vaciarCarrito.addEventListener("click", () => {
+  if (carrito.length === 0) {
+    // Si el carrito está vacío, muestra un mensaje de advertencia
+    Swal.fire("Carrito vacío", "El carrito ya está vacío", "warning");
+  } else {
+    // Si el carrito tiene productos, muestra el mensaje de confirmación
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Esta acción eliminará todos los productos del carrito",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, vaciar carrito",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Vacía el carrito y la tabla
+        carrito = [];
+        tablaCarrito.innerHTML = "";
+        document.getElementById("total").innerText =
+          "Precio total de su compra: $0";
+        localStorage.removeItem("carrito");
+
+        // SWEETALERT
+        Swal.fire(
+          "¡Carrito vaciado!",
+          "El carrito ha sido vaciado correctamente",
+          "success"
+        );
+      }
+    });
+  }
+});
+
+// FETCH
+
+function mostrarComentariosEnLaPagina(comentarios) {
+  const contenedorComentarios = document.getElementById(
+    "contenedorComentarios"
+  );
+
+  for (const comentario of comentarios.usuariosJSON) {
+    const comentarioElement = document.createElement("div");
+    comentarioElement.className = "col";
+
+    const cardComentario = document.createElement("div");
+    cardComentario.className = "card";
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    const autorElement = document.createElement("h5");
+    autorElement.className = "card-title";
+    autorElement.textContent = comentario.nombre;
+
+    const comentarioText = document.createElement("p");
+    comentarioText.className = "card-text";
+    comentarioText.textContent = comentario.comentarioJSON;
+
+    cardBody.appendChild(autorElement);
+    cardBody.appendChild(comentarioText);
+
+    cardComentario.appendChild(cardBody);
+
+    comentarioElement.appendChild(cardComentario);
+    contenedorComentarios.appendChild(comentarioElement);
+  }
+}
+
+function obtenerJson() {
+  const urlJSON = "/archivo.json";
+  fetch(urlJSON)
+    .then((response) => response.json())
+    .then((data) => {
+      mostrarComentariosEnLaPagina(data);
+    })
+    .catch((error) => {
+      console.error("Error al cargar comentarios:", error);
+    });
+}
+
+obtenerJson();

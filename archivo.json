@@ -1,0 +1,24 @@
+{
+  "usuariosJSON": [
+    {
+      "nombre": "Michelle Mejias",
+      "comentarioJSON": "Su café de alta calidad es constante y delicioso. Mi lugar favorito."
+    },
+    {
+      "nombre": "Irene Morillas",
+      "comentarioJSON": "Esta cafetería tiene carácter. Todo es auténtico y encantador."
+    },
+    {
+      "nombre": "Said Valcarcel",
+      "comentarioJSON": "Sabes que tendrás café excelente y personal amigable cada vez. Siempre es un placer."
+    },
+    {
+      "nombre": "Marisol Arranz",
+      "comentarioJSON": "Cada vez que pienso en café, pienso en esta cafetería. Deja una impresión duradera."
+    },
+    {
+      "nombre": "Alejandro Jose",
+      "comentarioJSON": "Cada taza es un placer para el paladar. Café de calidad que nunca decepciona."
+    }
+  ]
+}
