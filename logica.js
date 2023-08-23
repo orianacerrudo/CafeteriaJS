@@ -73,6 +73,7 @@ function agregarACarrito(producto) {
         <td><img class="tamañoIMGcarrito" src="${producto.imagen}" alt="${producto.nombre}"></td>
         <td>${producto.nombre}</td>
         <td>$${producto.precio}</td>
+        <td><button class="btn btn-light eliminarProducto" data-id="${producto.id}">🗑️</button></td>
       </tr>
     `;
 
@@ -82,7 +83,7 @@ function agregarACarrito(producto) {
     0
   );
   document.getElementById("total").innerText =
-    "Precio total de su compra: $ " + totalCarrito;
+    "Precio total de su compra: $" + totalCarrito;
 }
 
 // Mostrar productos en el carrito desde localStorage
@@ -95,6 +96,7 @@ function mostrarProductosEnCarrito() {
           <td><img class="tamañoIMGcarrito" src="${producto.imagen}" alt="${producto.nombre}"></td>
           <td>${producto.nombre}</td>
           <td>$${producto.precio}</td>
+          <td><button class="btn btn-light eliminarProducto" data-id="${producto.id}">🗑️</button></td>
         </tr>
       `;
   }
@@ -194,6 +196,8 @@ vaciarCarrito.addEventListener("click", () => {
   }
 });
 
+// agregar funcion que elimine un producto del carrito
+
 // FETCH
 
 function mostrarComentariosEnLaPagina(comentarios) {
@@ -206,7 +210,7 @@ function mostrarComentariosEnLaPagina(comentarios) {
     comentarioElement.className = "col";
 
     const cardComentario = document.createElement("div");
-    cardComentario.className = "card";
+    cardComentario.className = "card cardComentario";
 
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
@@ -230,7 +234,7 @@ function mostrarComentariosEnLaPagina(comentarios) {
 }
 
 function obtenerJson() {
-  const urlJSON = "/archivo.json";
+  const urlJSON = "/comentarios.json";
   fetch(urlJSON)
     .then((response) => response.json())
     .then((data) => {

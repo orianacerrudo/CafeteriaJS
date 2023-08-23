@@ -71,9 +71,11 @@ footer {
 }
 
 .parrafoHome {
+  font-weight: bold;
   font-family: "Source Sans 3", sans-serif;
   text-align: center;
   width: 300px;
+  color: #5a3c28;
   margin: auto;
 }
 .botonHome {
@@ -102,6 +104,7 @@ footer {
   margin-bottom: 15px;
 }
 .subtComentarios {
+  background-color: #8b6850;
   border-style: solid;
   border-color: #5a3c28;
   border-radius: 10px;
@@ -111,6 +114,10 @@ footer {
 }
 div#contenedorComentarios {
   margin-bottom: 15px;
+}
+.cardComentario {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* SECCION 2 */
@@ -135,7 +142,7 @@ div#contenedorComentarios {
 .subtitulo2 {
   font-family: "Source Sans 3", sans-serif;
   font-weight: bold;
-  color: #5a3c28;
+  color: #442c1b;
   font-size: 35px;
 }
 /* CARDS */
@@ -223,6 +230,9 @@ table th {
 table td {
   vertical-align: middle;
 }
+#tablaCarrito thead {
+  background-color: #7f5539;
+}
 .tamañoIMGcarrito {
   width: 60px;
 }
@@ -269,6 +279,10 @@ h6 {
   }
   .nav-texto {
     text-align: center;
+  }
+  .cardComentario {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
