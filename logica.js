@@ -73,7 +73,6 @@ function agregarACarrito(producto) {
         <td><img class="tamañoIMGcarrito" src="${producto.imagen}" alt="${producto.nombre}"></td>
         <td>${producto.nombre}</td>
         <td>$${producto.precio}</td>
-        <td><button class="btn btn-light eliminarProducto" data-id="${producto.id}">🗑️</button></td>
       </tr>
     `;
 
@@ -96,7 +95,6 @@ function mostrarProductosEnCarrito() {
           <td><img class="tamañoIMGcarrito" src="${producto.imagen}" alt="${producto.nombre}"></td>
           <td>${producto.nombre}</td>
           <td>$${producto.precio}</td>
-          <td><button class="btn btn-light eliminarProducto" data-id="${producto.id}">🗑️</button></td>
         </tr>
       `;
   }
@@ -195,8 +193,6 @@ vaciarCarrito.addEventListener("click", () => {
     });
   }
 });
-
-// agregar funcion que elimine un producto del carrito
 
 // FETCH
 
